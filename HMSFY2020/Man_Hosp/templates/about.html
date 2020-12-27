@@ -1,0 +1,75 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block title%} About Us{% endblock %}
+
+{% block css%} 
+<style>
+.scroll-top-wrapper {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  text-align: center;
+  z-index: 99999999;
+  background-color: #777777;
+  color: #eeeeee;
+  width: 50px;
+  height: 48px;
+  line-height: 48px;
+  right: 30px;
+  bottom: 30px;
+  padding-top: 2px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.scroll-top-wrapper:hover {
+  background-color: #888888;
+}
+
+.scroll-top-wrapper.show {
+  visibility: visible;
+  cursor: pointer;
+  opacity: 1.0;
+}
+
+.scroll-top-wrapper i.fa {
+  line-height: inherit;
+}
+
+
+p {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.about
+{
+    background-color: burlywood;
+    width: 1708px;
+    height: 700px;
+}
+</style>
+{% endblock %}
+
+
+{% block body %}
+<div class="about"><h1 class="text-center">ABOUT</h1>
+<p class="text-justify" id="about-p">The main motive of this website is to provide a relaible service to our users with guranteed privacy. This website holds the detials of the patient to book their appointment with the doctors and can view their previous appointments, prescriptions,
+    reports etc.</p>
+<p class="text-justify" id="about-p1">The patient can view the doctors of their specialisation, so that they can book an appointment with the respective doctor of their intrest. The doctor can view all the details of the appointments so that he can gives the prescirption for the patients.
+    The prescription detials are also saved so that whenever the patient again visits to show the previous treatment taken.</p>
+<p class="text-justify" id="about-p-1">The Receptionist in the organisation will handle the outpatients comming to the hospital and maintaint the payments for the consultation through offline.The Admin can add new Doctors, Receptionists, view all the appointments, Delete Doctors account,
+    view the prescriptions given to the patients by doctors.&nbsp;</p>
+<div class="scroll-top-wrapper"><span class="scroll-top-inner"><i class="fa fa-arrow-circle-up"></i></span></div>
+</div>
+
+{% endblock %}

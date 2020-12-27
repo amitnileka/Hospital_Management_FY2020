@@ -1,0 +1,159 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Services</title>
+    
+    <style>
+        *{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+    background: url('{%static "img/back1.jpeg"%}');
+}
+.container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+  flex-wrap: wrap;
+}
+.logoo{
+  position: relative;
+  top: -90px;
+  left: -110px;
+}
+.box{
+	position: relative;
+	width: 350px;
+	padding: 30px;
+	background: #fff;
+	box-shadow: 0 5px 15px rgba(0,0,0,.1);
+	border-radius: 4px;
+	margin: 20px;
+	overflow: hidden;
+	text-align: center;
+}
+.box:before{
+	content: "";
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(255,255,255,.2);
+	z-index: 1;
+}
+.box .icon{
+	position: relative;
+	width: 80px;
+	height: 80px;
+	background: #000;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	font-size: 40px;
+	font-weight: 700;
+	border-radius: 50%;
+	transition: 1s;
+}
+.box:nth-child(1) .icon{
+	box-shadow: 0 0 0 0 #e91e63;
+	background: #e91e63;
+}
+.box:nth-child(1):hover .icon{
+	box-shadow: 0 0 0 600px #e91e63;
+}
+.box:nth-child(2) .icon{
+	box-shadow: 0 0 0 0 #2196f3;
+	background: #2196f3;
+}
+.box:nth-child(2):hover .icon{
+	box-shadow: 0 0 0 600px #2196f3;
+}
+.box:nth-child(3) .icon{
+	box-shadow: 0 0 0 0 #23e629;
+	background: #23e629;
+}
+.box:nth-child(3):hover .icon{
+	box-shadow: 0 0 0 600px #23e629;
+}
+.box .content{
+	position: relative;
+	z-index: 2;
+	transition: .5s;
+}
+.box:hover .content{
+	color: #fff;
+}
+.box .content h3{
+	font-size: 20px;
+	margin: 20px 0;
+}
+.box .content a{
+	display: inline-block;
+	padding: 10px 20px;
+	background: #fff;
+	border-radius: 4px;
+	text-decoration: none;
+	color: #000;
+	font-weight: 500;
+	margin-top: 20px;
+	box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+    </style>
+</head>
+<body>
+
+	<div class="container">
+		<div class="box">
+            <div class="icon">01</div>
+            <img src="{% static 'img/internalmedicine1.png'%}" class="logoo">
+			<div class="content">
+				<h3>General Medicine</h3>
+				<p>Medicover’s Internal Medicine department deals with a wide range of health conditions that affect internal organs in adults. Our healthcare experts specialized in Internal Medicine are responsible for the prevention, diagnosis, and treatment of all possible internal diseases. The department of internal medicine comprises few subspecialties which include :</p>
+                    <p>Allergy and Immunology</p>
+                    <p>Cardiology</p>
+                    <p>Critical care medicine</p>
+                    <p>Endocrinology</p>
+                    <p>Gastroenterology</p>
+				<a href="#">Read More</a>
+			</div>
+		</div>
+
+		<div class="box">
+            <div class="icon">02</div>
+            <img src="{% static 'img/cardiology1-1.png'%}" class="logoo">
+			<div class="content">
+				<h3>Cardiology</h3>
+                    <p>The Department of Cardiology at Medicover Hospitals offers cutting- edge technology, top specialists, with best practices in non-intrusive, interventional and surgeries and emergency services.
+                        Our Heart Institute is fully equipped with the Latest Electrophysiology lab with 3D mapping facility for assessment and removal of different forms of Arrhythmias. We hold best in the state for device implantations like ICDs and CRT.</p>
+    
+				<a href="#">Read More</a>
+			</div>
+		</div>
+
+		<div class="box">
+            <div class="icon">03</div>
+            <img src="{% static 'img/criticalcare1.png'%}" class="logoo">
+			<div class="content">
+				<h3>Critical care</h3>
+				<p>Patients who are critically ill are given close and constant attention by our team of experts under specially designed environment known as the Trauma center or Intensive Care Unit (ICU).
+                    Multidisciplinary team of expert team with cutting-edge technology, assure that any critically ill patient is ensured chances of survival. Our Critical Care intensivists work with doctors from other specialties which include anesthesiology, cardiovascular medicine, internal medicine, pulmonology, neurology, neurosurgery, nephrology, pediatrics, cardiology and many more.</p>
+				<a href="#">Read More</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

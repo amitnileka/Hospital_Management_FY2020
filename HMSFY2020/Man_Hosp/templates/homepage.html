@@ -1,0 +1,79 @@
+{% extends 'basic.html' %}
+ 
+    {% block title %}homepage {% endblock %}
+    {% load static  %}
+{% block css %}
+<style>
+
+    
+*{
+    margin: 0; padding:0; box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background: url('{%static "img/back1.jpeg"%}');
+}
+
+
+
+
+section{ display: flex;  }
+
+.leftside { width: 45%; height: auto; overflow: hidden; margin-top: 20px;}
+
+.leftside img{  width: 600px;  height: 500px; }
+
+.rightside{ width: 55%; height: 300px; color: white; text-align: center; margin-top: 80px; padding: 50px;}
+
+.rightside h1{ text-align: center;
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase; } 
+
+.rightside p {  
+    font-size: 1.1rem; padding: 50px 0; }
+
+.rightside button{   font-size: 17px;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+    background: linear-gradient(57deg, #00C6A7 , #1E4D92 ); 
+    border-radius: 4px 4px 4px 4px;
+    padding: 20px 35px ; 
+}
+
+
+
+.rightside button:hover{
+      background: linear-gradient(57deg, #1E4D92, #00C6A7 );   
+}
+   
+
+</style> {% endblock %}
+
+{% block body %}
+
+<header class="site-header clearfix">
+ 
+ <section>
+  <div class="leftside"> 
+   <img src="{%static 'img/illust.png'%}">
+  </div>
+  <div class="rightside"> 
+   <h1>Making Healthcare Simple</h1>
+   <p> HOSPITAL MANAGEMENT SERVICES </p>
+   <button>Make Appoinment</button>
+   <h1>&#8686;</h1>
+  </div>
+
+  
+ </section>
+
+</header>
+{% endblock %}
