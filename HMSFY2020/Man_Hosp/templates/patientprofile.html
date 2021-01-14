@@ -1,0 +1,56 @@
+{% extends 'patientinfo.html' %}
+{% load static %}
+
+{% block body_block%}
+
+<div class="row register-form">
+    <div class="col-md-8 offset-md-2">
+        {% for d in patient_details %}
+        <form class="custom-form" style="margin-top: 0px;">
+            <h1>Your Profile</h1>
+            <div class="form-row form-group">
+                <div class="col-sm-4 label-column">
+                    <label class="col-form-label" for="name-input-field">Name </label>
+                </div>
+                <div class="col-sm-6 input-column">
+                    <input class="form-control" type="text" value="{{ d.name }}" readonly="">
+                </div>
+            </div>
+            <div class="form-row form-group">
+                <div class="col-sm-4 label-column">
+                    <label class="col-form-label" for="email-input-field">Email </label>
+                </div>
+                <div class="col-sm-6 input-column">
+                    <input class="form-control" type="email" value="{{ d.email }}" readonly="">
+                </div>
+            </div>
+            <div class="form-row form-group">
+                <div class="col-sm-4 label-column">
+                    <label class="col-form-label" for="dropdown-input-field">Gender</label>
+                </div>
+                <div class="col-sm-6 input-column">
+                    <input class="form-control" type="text" value="{{ d.gender }}" readonly="">
+                </div>
+            </div>
+            <div class="form-row form-group">
+                <div class="col-sm-4 label-column">
+                    <label class="col-form-label" for="name-input-field">Phone Number</label>
+                </div>
+                <div class="col-sm-6 input-column">
+                    <input class="form-control" type="text" value="{{ d.phonenumber }}" readonly="">
+                </div>
+            </div>
+        
+            <div class="form-row form-group">
+                <div class="col-sm-4 label-column">
+                    <label class="col-form-label" for="name-input-field">Blood Group</label>
+                </div>
+                <div class="col-sm-6 input-column">
+                    <input type="text" class="form-control" value="{{ d.bloodgroup }}" readonly="">
+                </div>
+            </div>
+        </form>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
