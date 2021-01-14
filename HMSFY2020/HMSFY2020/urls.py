@@ -26,5 +26,7 @@ urlpatterns = [
     path('contactus/',contactus,name="contactus"),
     path('services/',services,name="services"),
     path('patientinfo/',patientinfo,name="patientinfo"),
+    path('logoutpg/',logoutpg,name='logoutpg'),
+    path('patientprofile/',patientprofile,name="patientprofile"),
 
 ]
