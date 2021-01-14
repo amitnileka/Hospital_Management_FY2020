@@ -81,7 +81,28 @@ def contactus(request):
 def services(request):
 	return render(request,'services.html')
 
+def logoutpg(request):
+	logout(request)
+	return redirect('login')
+
 def patientinfo(request):
+	if not request.user.is_active:
+		return redirect('login')
+	
+
+	
 	return render(request,'patientinfo.html')
 
+
+def patientprofile(request):
+	
+	
+	g = request.user.groups.all()[0].name
+	if g == 'Patient':
+		patient_details=Patient.objects.all().filter(username=request.user)
+		d={'patient_details':patient_details}
+		return render(request,'patientprofile.html',d)
+	
+
+	return render(request,'patientprofile.html',d)
 
