@@ -136,3 +136,15 @@ def MakeAppointments(request):
 			return render(request,'patientmakeappointments.html',e)
 		elif request.method == 'GET':
 			return render(request,'patientmakeappointments.html',d)
+
+def viewappointments(request):
+	if not request.user.is_active:
+		return redirect('loginpage')
+	#print(request.user)
+	g = request.user.groups.all()[0].name
+	if g == 'Patient':
+		u=Appointment.objects.all()
+		st={
+			"stu":u
+		}
+		return render(request,'patientviewappointments.html',st)
