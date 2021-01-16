@@ -23,7 +23,7 @@ h1
 .Abody
 {
     margin-top: 50px;
-    height: 550px;
+    height: 600px;
     background-color: gray;
     width: 1000px;
 }
@@ -31,7 +31,7 @@ h1
 {
     
     margin-left: 20px;
-    height: 400px;
+    height: 450px;
     
     padding: 15px;
 
@@ -70,7 +70,11 @@ h1
     height: 30px;
     font-size: large;
 }
-
+.submit-button
+{
+    padding: 10px;
+    font-size: large;
+}
 </style>
 {% endblock %}
 {% block body_block%}
@@ -129,6 +133,7 @@ h1
                                 <textarea class="form-control" name="symptoms" required=""></textarea>
                             </div>
                         </div>
+                        <button class="btn btn-light submit-button" type="submit">Make Appointment</button>
             </form>
         </div>
     </div>
