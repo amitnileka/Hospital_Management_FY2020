@@ -29,4 +29,5 @@ urlpatterns = [
     path('logoutpg/',logoutpg,name='logoutpg'),
     path('patientprofile/',patientprofile,name="patientprofile"),
     path('makeappointments/',MakeAppointments,name='makeappointments'),
+    path('viewappointments/',viewappointments,name='viewappointments'),
 ]
