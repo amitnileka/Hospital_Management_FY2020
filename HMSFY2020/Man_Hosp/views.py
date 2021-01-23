@@ -148,3 +148,10 @@ def viewappointments(request):
 			"stu":u
 		}
 		return render(request,'patientviewappointments.html',st)
+
+def patient_delete_appointment(request,pid):
+	if not request.user.is_active:
+		return redirect('login')
+	appointment = Appointment.objects.get(id=pid)
+	appointment.delete()
+	return redirect('viewappointments')
