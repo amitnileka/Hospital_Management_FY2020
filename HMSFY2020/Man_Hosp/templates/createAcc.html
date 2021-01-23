@@ -701,7 +701,8 @@ header .menu-toggle {
 
             <div style="width: 50%;" class="auth-content">
 
-                <form action="createAcc.html" method="post">
+                <form  method="post">
+                    {% csrf_token %}
                   <h2 class="form-title">Register</h2>
             
                   <!-- <div class="msg error">
@@ -710,7 +711,7 @@ header .menu-toggle {
             
                   <div>
                     <label>Name</label>
-                    <input type="text" name="username" class="text-input">
+                    <input type="text" name="name" class="text-input">
                   </div>
                   <div>
                     <label>Email</label>
@@ -722,7 +723,7 @@ header .menu-toggle {
                   </div>
                   <div>
                     <label>Password Confirmation</label>
-                    <input type="password" name="passwordConf" class="text-input">
+                    <input type="password" name="repassword" class="text-input">
                   </div>
                   <div>
                     <label>Username</label>
