@@ -36,7 +36,7 @@ nav{
 .logo{
     width: 50%;
     height: 100px;
-    background-color: rgba(0,0,0,0.5);
+    background: #303036;
 }
 
 .logoo{
@@ -54,7 +54,7 @@ nav{
 
 .menu{
     width: 50%; height: 100px;
-    background-color: rgba(0,0,0,0.5);
+    background: #303036;
 }
 
 .menu button{
@@ -90,6 +90,22 @@ nav{
     text-transform: uppercase;
 }
 
+
+.menu .btn{
+    width: 150px;
+    margin-top: 0px;
+    padding: 14px 20px 14px 20px;
+    background-color: #2f8be0;
+    border-radius: 35px;
+    text-align: center
+}
+
+.menu .btn a{
+    font-size: 1.3vw;
+    color: #fff;
+}
+
+
     </style> 
     {% block css %}
      {% endblock %}
@@ -100,7 +116,7 @@ nav{
  
       <div class="logo">
        <img src="{% static 'img/Koala-01-1.png'%}" class="logoo">
-       <h1>Koala Hospital</h1>
+       <h1>Aboli Hospital</h1>
       </div>
       <div class="menu"> 
        <ul>
@@ -109,8 +125,10 @@ nav{
         <li><a id="seclist" href="/about">ABOUTUS</a></li>
         <li><a id="seclist" href="/contactus">CONTACTUS</a></li>
         <li><a id="seclist" href="/login">LOGIN</a> &#187;</li>
-          <button>HelpLine</button>
-          </div>  
+        <div class="btn">
+            <a href="#">HELPLINE</a>
+        </div>
+    </div>  
        </ul>
      </nav>
     <!-- Optional JavaScript; choose one of the two! -->
