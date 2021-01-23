@@ -652,7 +652,8 @@ header .menu-toggle {
 {% block body %}
 <div class="auth-content">
 
-    <form action="login.html" method="post">
+    <form  method="post">
+        {% csrf_token %}
       <h2 class="form-title">Login</h2>
 
       <div>
