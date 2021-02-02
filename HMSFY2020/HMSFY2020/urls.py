@@ -40,4 +40,3 @@ urlpatterns = [
     path('adminDeleteDoctor<int:pid><str:username>',admin_delete_doctor,name='admin_delete_doctor'),
     path('temp/',temp,name='temp'),
 ]
-]
