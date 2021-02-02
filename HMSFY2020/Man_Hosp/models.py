@@ -30,7 +30,9 @@ class Contact(models.Model):
 class Doctor(models.Model):
 	name = models.CharField(max_length=50)
 	email = models.EmailField(unique=True)
+	username = models.CharField(max_length=16)
 	password = models.CharField(max_length=16)
+	repassword = models.CharField(max_length=16,default="temp")
 	gender = models.CharField(max_length=10)
 	phonenumber = models.CharField(max_length=10)
 	address = models.CharField(max_length=100)
