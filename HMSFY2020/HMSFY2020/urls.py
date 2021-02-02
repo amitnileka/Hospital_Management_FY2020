@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Man_Hosp.views import *
-from Man_Hosp import views
+from Hosp.views import *
+from Hosp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index,name='index'),
@@ -26,9 +26,16 @@ urlpatterns = [
     path('contactus/',contactus,name="contactus"),
     path('services/',services,name="services"),
     path('patientinfo/',patientinfo,name="patientinfo"),
+    path('patientdash/',patientdash,name="patientdash"),
     path('logoutpg/',logoutpg,name='logoutpg'),
     path('patientprofile/',patientprofile,name="patientprofile"),
     path('makeappointments/',MakeAppointments,name='makeappointments'),
     path('viewappointments/',viewappointments,name='viewappointments'),
     path('PatientDeleteAppointment<int:pid>',patient_delete_appointment,name='patient_delete_appointment'),
+    path('adminaddpatient/',adminaddpatient,name='adminaddpatient'),
+    path('adminadddoctor/',adminadddoctor,name='adminadddoctor'),
+    path('adminhome/',adminhome,name='adminhome'),
+    path('adminviewpatient/',adminviewpatient,name='adminviewpatient'),
+    path('adminviewdoctor/',adminviewdoctor,name='adminviewdoctor'),
+    
 ]
