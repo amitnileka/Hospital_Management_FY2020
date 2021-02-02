@@ -753,28 +753,30 @@
 
                     <table>
                         <thead>
-                            <th>SN</th>
+                            
                             <th>Doctor Name</th>
-                            <th>Occupation</th>
-                            <th colspan="3">Action</th>
+                            <th>Email</th>
+                            <th>Specialization</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Gender</th>
+                            <th>Bloodgroup</th>
+                            <th>Action</th>
                         </thead>
                         <tbody>
+                          {% for i in doc %}
                             <tr>
-                                <td>1</td>
-                                <td>Mr.Anil Kambale</td>
-                                <td>M.D.</td>
-                                <td><a href="#" class="edit">edit</a></td>
-                                <td><a href="#" class="delete">delete</a></td>
-                                <td><a href="#" class="publish">Verify</a></td>
+                                
+                                <td>{{ i.name }}</td>
+                                <td>{{ i.email }}</td>
+                                <td>{{ i.specialization }}</td>
+                                <td>{{ i.phonenumber }}</td>
+                                <td>{{ i.address }}</td>
+                                <td>{{ i.gender }}</td>
+                                <td>{{ i.bloodgroup }}</td>
+                                <td><a href="{% url 'admin_delete_doctor' i.id i.username %}" onclick="return confirm('Are you sure you want to delete?')" class="btn btn-danger">Delete</a></td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Mrs.Kambale</td>
-                                <td>M.b.b.s.S</td>
-                                <td><a href="#" class="edit">edit</a></td>
-                                <td><a href="#" class="delete">delete</a></td>
-                                <td><a href="#" class="publish">Verify</a></td>
-                            </tr>
+                           {% endfor %}
                         </tbody>
                     </table>
 
