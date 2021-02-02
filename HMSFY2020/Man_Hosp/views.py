@@ -251,5 +251,15 @@ def adminadddoctor(request):
 def adminviewdoctor(request):
 	if not  request.user.is_staff:
 		return redirect('login')
+	doc = Doctor.objects.all()
+	d = { 'doc' : doc }
+	return render(request,'adminviewdoctor.html',d)
 
-	return render(request,'adminviewdoctor.html')
+def admin_delete_doctor(request,pid,username):
+	if not request.user.is_staff:
+		return redirect('login')
+	doctor = Doctor.objects.get(id=pid)
+	doctor.delete()
+	users = User.objects.filter(username=username)
+	users.delete()
+	return redirect('adminviewdoctor')
