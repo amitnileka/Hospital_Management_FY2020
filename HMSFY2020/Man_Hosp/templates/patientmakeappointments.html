@@ -1,159 +1,224 @@
 {% extends 'patientinfo.html' %}
 {% load static %}
 {% block css %}
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
-
 <style>
+/* Admin CSS */
 
-.content{
-  width: (100% - 250px);
-  margin-top: 60px;
-  padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #ebebeb
+}
+.container{
+  max-width: 900px;
+  width: 100%;
+  height: 530px;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
   margin-left: 250px;
-  
-  background-position: center;
-  background-size: cover;
-  height: 200vh;
-  transition: 0.5s;
+  margin-top: 70px;
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0px 0 0px 0;
+  margin-left: -250px;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #9b59b6;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+  margin-left: -250px;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+   margin-left: -250px;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+   
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   
+   margin-left: -250px;
+ }
+ form .button input{
+   height: 100%;
+   width: 50%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
 }
 
-div.b{
-    margin-left: 0px;
-    margin-top: 30px;
-    text-align: center;
-    padding: 10px;
-    color:gray;
-    background-color: rgb(172, 209, 197);
 
-}
-
-
-h1
-{
-    color: black;
-
-}
-.Abody
-{
-    margin-top: 50px;
-    height: 600px;
-    background-color: mediumaquamarine;
-    width: 975px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.1);
-
-}
-.Abody_A1
-{
-    
-    margin-left: 20px;
-    height: 250px;
-    padding: 15px;
-    text-align: center;
-
-    
-}
-.label-column1
-{
-    margin-bottom: 10px;
-    font-size: large;
-}
-.input-column1
-{
-    margin-bottom: 10px;
-    font-size: large;
-}
-.form-control1
-{
-    width: 510px;
-    height: 30px;
-    font-size: large;
-}
-
-.label-column
-{
-    margin-bottom: 10px;
-    font-size: large;
-}
-.input-column
-{
-    margin-bottom: 10px;
-    font-size: large;
-}
-.form-control
-{
-    width: 500px;
-    height: 30px;
-    font-size: large;
-}
-.submit-button
-{
-    padding: 10px;
-    font-size: large;
-}
+/* End Style css */
 </style>
 {% endblock %}
 {% block body_block%}
-<div class="content">
-    <div class="col-md-8 offset-md-2">
-        <div class="b">
-            <h1>USER | DASHBOARD</h1>
+<div class="container">
+  <div class="title">Book Appointemnt</div>
+  <div class="content">
+    <form action="#">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Doctor's Name and Field</span>
+          <input type="text" placeholder="Enter Doctor's name" required>
         </div>
-            <hr style="height: 3px; border-width: 0; color: gray; background-color: gray; margin-right: 0px; margin-top: 40px;">
-            <div class="Abody">
-        <div class="Abody_A1">
-            <h2>BooK Appointemnt</h2>
-            <form class="custom-form" method="post">
-                {% csrf_token %}
-                <div class="form-row form-group">
-                    <div class="col-sm-4 label-column1">
-                        <label class="col-form-label" for="name-input-field">Doctor's Name & Field</label>
-                    </div>
-                    <div class="col-sm-6 input-column1">
-                        <select class="form-control1" name="doctoremail">
-                                {% for d in alldoctors %}
-                                <option value="{{d.email}}">{{d.name}}----->{{d.specialization}}</option>
-                                {% endfor %}
-                        </select>
-                    </div>
-                </div>
-                {% for d in alldoctors %}
-                        <input type="hidden" value="{{d.name}}" name="doctorname">
-                        {% endfor %}
-                        <div class="form-row form-group">
-                            <div class="col-sm-4 label-column"><label class="col-form-label" for="pawssword-input-field">Name</label></div>
-                            <div class="col-sm-6 input-column">
-                                <input class="form-control" type="text" value="{{user.first_name}}" name="patientname">
-                            </div>
-                        </div>
-                        <div class="form-row form-group">
-                            <div class="col-sm-4 label-column"><label class="col-form-label" for="pawssword-input-field">Email</label></div>
-                            <div class="col-sm-6 input-column">
-                                <input class="form-control" type="text" value="{{user.email}}" name="patientemail">
-                            </div>
-                        </div>
-                        <div class="form-row form-group">
-                            <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-pawssword-input-field">Appointment Date</label></div>
-                            <div class="col-sm-6 input-column">
-                                <input class="form-control" type="date" name="appointmentdate" required="">
-                            </div>
-                        </div>
-                        <div class="form-row form-group">
-                            <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-pawssword-input-field">Appointment Time</label></div>
-                            <div class="col-sm-6 input-column">
-                                <input class="form-control" type="time" placeholder="enter time" name="appointmenttime" required="">
-                            </div>
-                        </div>
-                        <div class="form-row form-group">
-                            <div class="col-sm-4 label-column"><label class="col-form-label" for="repeat-pawssword-input-field">Symptoms</label></div>
-                            <div class="col-sm-6 input-column">
-                                <textarea class="form-control" name="symptoms" required=""></textarea>
-                            </div>
-                        </div>
-                        <button class="btn btn-light submit-button" type="submit">Make Appointment</button>
-            </form>
+        <div class="input-box">
+          <span class="details">Name</span>
+          <input type="text" placeholder="Enter your username" required>
         </div>
-    </div>
-    </div>
+        <div class="input-box">
+          <span class="details">Email</span>
+          <input type="text" placeholder="Enter your email" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Appointemnt Date</span>
+          <input class="form-control" type="date" name="appointmentdate" required="">
+        </div>
+        <div class="input-box">
+          <span class="details">Appointemnt Time</span>
+          <input class="form-control" type="time" placeholder="enter time" name="appointmenttime" required="">
+        </div>
+        <div class="input-box">
+          <span class="details">Symptoms</span>
+          <input type="text"  required>
+        </div>
+      </div>
+      <div class="gender-details">
+        <input type="radio" name="gender" id="dot-1">
+        <input type="radio" name="gender" id="dot-2">
+        <input type="radio" name="gender" id="dot-3">
+        <span class="gender-title">Gender</span>
+        <div class="category">
+          <label for="dot-1">
+          <span class="dot one"></span>
+          <span class="gender">Male</span>
+        </label>
+        <label for="dot-2">
+          <span class="dot two"></span>
+          <span class="gender">Female</span>
+        </label>
+        <label for="dot-3">
+          <span class="dot three"></span>
+          <span class="gender">Prefer not to say</span>
+          </label>
+        </div>
+      </div>
+      <div class="button">
+        <input type="submit" value="Register">
+      </div>
+    </form>
+  </div>
 </div>
 
 {% ifequal error "no" %}
