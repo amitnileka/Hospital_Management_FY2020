@@ -4,147 +4,173 @@
 
 <style>
 
-.content{
-  width: (100% - 250px);
-  margin-top: 60px;
-  padding: 20px;
-  margin-left: 250px;
-  
-  background-position: center;
-  background-size: cover;
-  height: 200vh;
-  transition: 0.5s;
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-div.b{
-    margin-left: 0px;
-    margin-top: 30px;
-    text-align: center;
-    padding: 10px;
-    color:gray;
-    background-color: rgb(172, 209, 197);
-
+body{
+   background-color: #f3f3f3;
 }
 
-
-h1
-{
-    color: black;
-}
-.Abody
-{
-    margin-top: 50px;
-    height: 600px;
-    background-color: mediumaquamarine;
-    width: 975px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.1);
-
-}
-.Abody_A1
-{
-    
-    margin-left: 20px;
-    height: 250px;
-    padding: 15px;
-    text-align: center;
-    
-}
-.label-column1
-{
-    margin-bottom: 10px;
-    font-size: large;
-}
-.input-column1
-{
-    margin-bottom: 10px;
-    font-size: large;
-}
-.form-control1
-{
-    width: 510px;
-    height: 30px;
-    font-size: large;
+.wrapper{
+  position: absolute;
+  top: 55%;
+  left: 60%;
+  transform: translate(-50%,-50%);
+  width: 850px;
+  height: 70%;
+  display: flex;
+  box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
 }
 
-.label-column
-{
-    margin-bottom: 10px;
-    font-size: large;
-}
-.input-column
-{
-    margin-bottom: 10px;
-    font-size: large;
-}
-.form-control
-{
-    width: 500px;
-    height: 30px;
-    font-size: large;
+.wrapper .left{
+  width: 35%;
+  background:#303036;
+  padding: 30px 25px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-align: center;
+  color: #fff;
 }
 
+.wrapper .left img{
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
 
+.wrapper .left h4{
+  margin-bottom: 10px;
+}
+
+.wrapper .left p{
+  font-size: 12px;
+}
+
+.wrapper .right{
+  width: 65%;
+  background: #fff;
+  padding: 30px 25px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.wrapper .right .info,
+.wrapper .right .projects{
+  margin-bottom: 60px;
+}
+
+.wrapper .right .info h3,
+.wrapper .right .projects h3{
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #353c4e;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.wrapper .right .info_data,
+.wrapper .right .projects_data{
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper .right .info_data .data,
+.wrapper .right .projects_data .data{
+  width: 45%;
+}
+
+.wrapper .right .info_data .data h4,
+.wrapper .right .projects_data .data h4{
+    color: #353c4e;
+    margin-bottom: 5px;
+}
+
+.wrapper .right .info_data .data p,
+.wrapper .right .projects_data .data p{
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #919aa3;
+}
+
+.wrapper .social_media ul{
+  display: flex;
+}
+
+.wrapper .social_media ul li{
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(to right,#303036,#55555e);
+  margin-right: 10px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 45px;
+  margin-top: 15%;
+}
+
+.wrapper .social_media ul li a{
+  color :#fff;
+  display: block;
+  font-size: 18px;
+}
 </style>
 {% endblock %}
 {% block body_block%}
 
-<div class="content">
-    <div class="col-md-8 offset-md-2">
-        <div class="b">
-            <h1>USER | DASHBOARD</h1>
-        </div>
-            <hr style="height: 3px; border-width: 0; color: gray; background-color: gray; margin-right: 0px; margin-top: 40px;">
-        <div class="Abody">
-            <div class="Abody_A1">
-                <h2>My Profile</h2>
-        {% for d in patient_details %}
-        <form class="custom-form">
-            <div class="form-row form-group">
-                <div class="col-sm-4 label-column">
-                    <label class="col-form-label" for="name-input-field">Name </label>
-                </div>
-                <div class="col-sm-6 input-column">
-                    <input class="form-control" type="text" value="{{ d.name }}" readonly="">
-                </div>
+<div class="wrapper">
+    <div class="left">
+        <img src="{%static 'img/mycariat-01.jpg'%}" 
+        alt="user" width="100">
+        <h4>Arijit Singh</h4>
+            <div style="margin-top: 15%;">
+             <h5>Phone number</h5>
+             <p>2190-9088777</p>
             </div>
-            <div class="form-row form-group">
-                <div class="col-sm-4 label-column">
-                    <label class="col-form-label" for="email-input-field">Email </label>
-                </div>
-                <div class="col-sm-6 input-column">
-                    <input class="form-control" type="email" value="{{ d.email }}" readonly="">
-                </div>
-            </div>
-            <div class="form-row form-group">
-                <div class="col-sm-4 label-column">
-                    <label class="col-form-label" for="dropdown-input-field">Gender</label>
-                </div>
-                <div class="col-sm-6 input-column">
-                    <input class="form-control" type="text" value="{{ d.gender }}" readonly="">
-                </div>
-            </div>
-            <div class="form-row form-group">
-                <div class="col-sm-4 label-column">
-                    <label class="col-form-label" for="name-input-field">Phone Number</label>
-                </div>
-                <div class="col-sm-6 input-column">
-                    <input class="form-control" type="text" value="{{ d.phonenumber }}" readonly="">
-                </div>
-            </div>
-        
-            <div class="form-row form-group">
-                <div class="col-sm-4 label-column">
-                    <label class="col-form-label" for="name-input-field">Blood Group</label>
-                </div>
-                <div class="col-sm-6 input-column">
-                    <input type="text" class="form-control" value="{{ d.bloodgroup }}" readonly="">
-                </div>
-            </div>
-        </form>
-        {% endfor %}
     </div>
-</div>
-</div>
+    <div class="right">
+        <div class="info">
+            <h3>Information</h3>
+            <div class="info_data">
+                 <div class="data">
+                    <h4>Email</h4>
+                    <p>arijit@gmail.com</p>
+                 </div>
+                 <div class="data">
+                   <h4>Age</h4>
+                    <p>21</p>
+              </div>
+            </div>
+        </div>
+
+        <div class="info">
+            <div class="info_data">
+                 <div class="data">
+                    <h4>Gender</h4>
+                    <p>Male</p>
+                 </div>
+                 <div class="data">
+                   <h4>BloodGroup</h4>
+                    <p>o-</p>
+              </div>
+            </div>
+        </div>
+
+      
+      
+        <div class="social_media">
+            <ul>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+      </div>
+    </div>
 </div>
 <div class="scroll-top-wrapper"><span class="scroll-top-inner"><i class="fa fa-arrow-circle-up"></i></span></div>
 
